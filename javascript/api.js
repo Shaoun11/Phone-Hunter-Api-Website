@@ -1,13 +1,28 @@
-const loadphone = async () =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const loadphone = async(searcht) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searcht}
+    `);
     const data=await res.json();
     const phones=data.data;
    iphoneload(phones);
 
 }
 
+  
+// display output
 const iphoneload =phone =>{
 const phonecontainer=document.getElementById('phone-conatainer');
+// show result evenly
+phonecontainer.textContent='';
+// show all buton add
+const showbtn=document.getElementById('show-all-btn')
+if(phone.length >15){
+    showbtn.classList.remove('hidden')
+}
+else{
+    showbtn.classList.add('hidden')
+}
+// show result only 15
+phone=phone.slice(0,15);
  phone.forEach(phonedata => {
    const phoneapi=document.createElement('div');
    phoneapi.classList=`card w-96 bg-base-100 shadow-xl`;
@@ -28,4 +43,11 @@ const phonecontainer=document.getElementById('phone-conatainer');
  });
 }
 
-loadphone()
+const searchhandler = () =>{
+   const searchfiledarea=document.getElementById('search-area');
+   const search=searchfiledarea.value;
+   loadphone(search)
+
+}
+
+

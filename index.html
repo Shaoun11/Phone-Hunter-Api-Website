@@ -23,7 +23,8 @@
     <div class="text-center">
         <h1 class="text-6xl text-black font-bold mb-6">Apple Iphone 13 Pro Max</h1>
         <p class="text-[#2a2a2a] text-lg font-normal mb-3">There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered alteration in some form, by injected humou.</p>
-        <button class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Buy Now</button>
+       
+       <button class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Buy Now</button>
     </div>
 
     <div class="grid grid-cols-3 mb-16">
@@ -35,12 +36,21 @@
     </header>
 
     <main class="bg-violet-100">
+      <section>
+        <div class="p-6 flex justify-center gap-1">
+          <input id="search-area" type="text" placeholder="Search...." class="input input-bordered w-full max-w-xs " />
+          <button onclick="searchhandler()" class=" btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Search</button>
+        </div>
+      </section>
         <section class="container mx-auto ">
-     <div id="phone-conatainer" class="pt-32 grid grid-cols-3 gap-4">
+     <div id="phone-conatainer"  class="pt-24 grid grid-cols-3 gap-4">
       
      </div>
      
         </section>
+        <div class="text-center pt-5">
+          <button id="show-all-btn" class=" hidden btn btn-outline btn-primary text-white mb-8 hover:bg-red-500 border-none">Show All</button>
+        </div>
     </main>
 
     <script src="javascript/api.js"></script>
