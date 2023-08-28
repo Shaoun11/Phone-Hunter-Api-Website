@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phone hunter website</title>
-    <link rel="shortcut icon" href="./apple-logo-png-transparent-background-1-removebg-preview.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./apple-logo-png-transparent-background-1-removebg-preview.png"
+      type="image/x-icon"
+    />
 
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
@@ -13,63 +17,165 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body >
+  <body>
     <!-- this header section on banner -->
-    <header class=" bg-emerald-200">
-        <div class="lg:ml-28 lg:mr-32 lg:p-8 ">
-       <div class="flex justify-between   "> <h1 class="text-[#3e3c3c] font-bold text-3xl">Apple Gadgets</h1>
-        <button class="btn btn-primary text-white hover:bg-red-500 border-none">Sign Up</button>
+    <header class="bg-emerald-200">
+      <div class="lg:ml-28 lg:mr-32 lg:p-8">
+        <div class="flex justify-between">
+          <h1 class="text-[#3e3c3c] font-bold text-3xl">Apple Gadgets</h1>
+          <button
+            class="btn btn-primary text-white hover:bg-red-500 border-none"
+          >
+            Sign Up
+          </button>
+        </div>
+        <div class="text-center">
+          <h1 class="text-6xl text-black font-bold mb-6">
+            Apple Iphone 13 Pro Max
+          </h1>
+          <p class="text-[#2a2a2a] text-lg font-normal mb-3">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority <br />
+            have suffered alteration in some form, by injected humou.
+          </p>
 
-    </div>
-    <div class="text-center">
-        <h1 class="text-6xl text-black font-bold mb-6">Apple Iphone 13 Pro Max</h1>
-        <p class="text-[#2a2a2a] text-lg font-normal mb-3">There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered alteration in some form, by injected humou.</p>
-       
-       <button class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Buy Now</button>
-    </div>
+          <button
+            class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none"
+          >
+            Buy Now
+          </button>
+        </div>
 
-    <div class="grid grid-cols-3  lg:mb-16 lg:pb-0  pb-10">
-        <img class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:mt-24 mt-12" src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
-        <img class="lg:h-auto lg:w-auto h-[350px] w-[490px]" src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
-        <img class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:ml-24 ml-0 lg:mt-24 mt-12"  src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
-    </div>
-    </div>
+        <div class="grid grid-cols-3 lg:mb-16 lg:pb-0 pb-10">
+          <img
+            class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:mt-24 mt-12"
+            src="./0611efaecb97f0bfffb7db74148e725d.png"
+            alt=""
+          />
+          <img
+            class="lg:h-auto lg:w-auto h-[350px] w-[490px]"
+            src="./0611efaecb97f0bfffb7db74148e725d.png"
+            alt=""
+          />
+          <img
+            class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:ml-24 ml-0 lg:mt-24 mt-12"
+            src="./0611efaecb97f0bfffb7db74148e725d.png"
+            alt=""
+          />
+        </div>
+      </div>
     </header>
 
     <main class="bg-violet-100">
       <!-- this is search filed body -->
       <section>
         <div class="p-6 flex justify-center gap-1">
-          <input id="search-area" type="text" placeholder="Search...." class="input input-bordered w-full max-w-xs " />
-          <button onclick="searchhandler()" class=" btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Search</button>
+          <input
+            id="search-area"
+            type="text"
+            placeholder="Search...."
+            class="input input-bordered w-full max-w-xs"
+          />
+          <button
+            onclick="searchhandler()"
+            class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none"
+          >
+            Search
+          </button>
         </div>
       </section>
 
-        <!-- loading add -->
+      <!-- loading add -->
 
-        <div id="loading-filed" class="text-center hidden">
+      <div id="loading-filed" class="text-center hidden">
         <span class="loading loading-infinity text-primary p-7"></span>
-        </div>
-
+      </div>
 
       <!-- phone container show result on loaddata js file -->
-        <section class="container mx-auto  ">
-     <div id="phone-conatainer"  class="pt-24 grid lg:grid-cols-3 grid-cols-1 gap-4 lg:ml-0 ml-4">
-      
-     </div>
-     
-        </section>
-       
+      <section class="container mx-auto">
+        <div
+          id="phone-conatainer"
+          class="pt-24 grid lg:grid-cols-3 grid-cols-1 gap-4 lg:ml-0 ml-4"
+        ></div>
+      </section>
 
-      
+      <!-- show all button add body -->
+      <div class="text-center pt-5">
+        <button
+          onclick="showall()"
+          id="show-all-btn"
+          class="hidden btn btn-outline btn-primary text-white mb-8 hover:bg-red-500 border-none"
+        >
+          Show All
+        </button>
+      </div>
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
 
-        <!-- show all button add body -->
-        <div class="text-center pt-5">
-          <button onclick="showall()" id="show-all-btn" class=" hidden btn btn-outline btn-primary text-white mb-8 hover:bg-red-500 border-none">Show All</button>
-        </div>
-
+        <dialog id="show_modal" class="modal modal-bottom sm:modal-middle">
+          <form method="dialog" class="modal-box">
+            <h3 id="title-show" class="font-bold text-lg ml-[163px] mb-3">Hello!</h3>
+         <div class=" " id="show-container">
+          
+         </div>
+         
+            <div class="modal-action ">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn border-none btn-primary hover:bg-red-500 text-white">Close</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
     </main>
-
+    <footer class="footer lg:p-10 p-0 bg-emerald-200 text-base-content">
+      <div>
+        <span class="footer-title font-bold">Services</span>
+        <a class="link link-hover font-semibold">Branding</a>
+        <a class="link link-hover font-semibold">Design</a>
+        <a class="link link-hover font-semibold">Marketing</a>
+        <a class="link link-hover font-semibold">Advertisement</a>
+      </div>
+      <div>
+        <span class="footer-title font-bold">Company</span>
+        <a class="link link-hover font-semibold">About us</a>
+        <a class="link link-hover font-semibold">Contact</a>
+        <a class="link link-hover font-semibold">Jobs</a>
+        <a class="link link-hover font-semibold">Press kit</a>
+      </div>
+      <div>
+        <span class="footer-title font-bold">Legal</span>
+        <a class="link link-hover font-semibold">Terms of use</a>
+        <a class="link link-hover font-semibold">Privacy policy</a>
+        <a class="link link-hover font-semibold">Cookie policy</a>
+      </div>
+      <div>
+        <span class="footer-title font-bold">Newsletter</span>
+        <div class="form-control w-80">
+          <label class="label">
+            <span class="label-text font-semibold"
+              >Enter your email address</span
+            >
+          </label>
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="heyshaoun@site.com"
+              class="input input-bordered w-full lg:pr-16 pr-2"
+            />
+            <button
+              class="btn btn-primary absolute top-0 right-0 rounded-l-none"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="text-center bg-emerald-200 lg:pt-0 pt-5">
+      <p class="text-lg text-gray-700">
+        Copyright © 2023 - All right reserved by Shaoun Industries Ltd
+      </p>
+    </div>
     <script src="javascript/api.js"></script>
   </body>
 </html>

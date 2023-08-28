@@ -1,6 +1,6 @@
 // create function on loadphone connection api website 
 // tarpor variable take pathia dite hobe iphoneload e
-const loadphone = async(searcht,isshowall) =>{
+const loadphone = async(searcht='13',isshowall) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searcht}
     `);
     const data=await res.json();
@@ -44,13 +44,64 @@ if (!isshowall){
     <h2 class="card-title">${phonedata.phone_name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions">
-    <button class="btn btn-primary">Buy Now</button>
+    <button onclick="showdetails('${phonedata.slug}')" class="btn btn-primary">Show Details</button>
     </div>
     </div>
    `
    phonecontainer.appendChild(phoneapi)
  });
  loadingadd(false);
+}
+
+const showdetails=async (id)=>{
+    
+        const res =await fetch(`https://openapi.programming-hero.com/api/phone/${id}`) 
+        const details=await res.json();
+        console.log(details);
+        const phone =details.data;
+
+      showoutput(phone);
+     
+}
+
+// show detials output
+const showoutput=(phone)=>{
+
+    show_modal.showModal()
+    const title=document.getElementById('title-show');
+    title.innerText=phone.name;
+   
+
+
+    const showContent=document.getElementById('show-container');
+   showContent.classList=`text-base font-medium`
+    showContent.innerHTML=`
+    <img class='ml-36' src="${phone.image}" alt="">
+    <h1 class='text-2xl font-semibold mb-1 mt-4'>Specification:-<h1/>
+    
+    Model:${phone.slug}<br/>
+    Chipset:${phone.mainFeatures.chipSet} <br/>
+    Display-Size:${phone.mainFeatures.displaySize}<br/>
+    Memory:${phone.mainFeatures.memory}<br/>
+    Sensors:${phone.mainFeatures.sensors}<br/>
+    Storage:${phone.mainFeatures.storage}<br/>
+    Release-Date:${phone.releaseDate}<br/>
+    Bluetooth:${phone.others.Bluetooth}<br/>
+    GPS:${phone.others.GPS}<br/>
+
+    NFC:${phone.others.NFC}<br/>
+
+    Radio:${phone.others.Radio}<br/>
+
+    USB:${phone.others.USB}<br/>
+
+    WLAN:${phone.others.WLAN}<br/>
+
+
+    `;
+
+    
+
 }
 //   create searchber handle and link on html 
 // link searchber on loadphone
@@ -75,4 +126,5 @@ const loadingadd=(isloading)=>{
         loading.classList.add('hidden')
     }
 }
+loadphone()
 
