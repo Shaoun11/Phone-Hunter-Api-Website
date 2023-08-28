@@ -1,5 +1,5 @@
 // create function on loadphone connection api website 
-// tarpor variable take pathia dite hobe iphoneload e
+// tarpor variable take pathia dite hobe iphone add korte hobe
 const loadphone = async(searcht='13',isshowall) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searcht}
     `);
@@ -13,6 +13,7 @@ const loadphone = async(searcht='13',isshowall) =>{
 // display output
 const iphoneload =(phone,isshowall) =>{
 const phonecontainer=document.getElementById('phone-conatainer');
+
 // show result evenly
 phonecontainer.textContent='';
 // show all buton add if else dia 
@@ -23,6 +24,8 @@ if(phone.length >15 &&!isshowall){
 else{
     showbtn.classList.add('hidden')
 }
+
+
 // show result only 15
 if (!isshowall){
     phone=phone.slice(0,15);
