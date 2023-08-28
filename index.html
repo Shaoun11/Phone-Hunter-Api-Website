@@ -14,8 +14,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body >
+    <!-- this header section on banner -->
     <header class=" bg-emerald-200">
-        <div class="ml-28 mr-32 p-8 ">
+        <div class="lg:ml-28 lg:mr-32 lg:p-8 ">
        <div class="flex justify-between   "> <h1 class="text-[#3e3c3c] font-bold text-3xl">Apple Gadgets</h1>
         <button class="btn btn-primary text-white hover:bg-red-500 border-none">Sign Up</button>
 
@@ -27,30 +28,46 @@
        <button class="btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Buy Now</button>
     </div>
 
-    <div class="grid grid-cols-3 mb-16">
-        <img class="w-[305px] h-[600px] mt-24" src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
-        <img src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
-        <img class="w-[305px] h-[600px] ml-24 mt-24"  src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
+    <div class="grid grid-cols-3  lg:mb-16 lg:pb-0  pb-10">
+        <img class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:mt-24 mt-12" src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
+        <img class="lg:h-auto lg:w-auto h-[350px] w-[490px]" src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
+        <img class="lg:w-[305px] lg:h-[600px] w-[120px] h-[250px] lg:ml-24 ml-0 lg:mt-24 mt-12"  src="./0611efaecb97f0bfffb7db74148e725d.png" alt="">
     </div>
     </div>
     </header>
 
     <main class="bg-violet-100">
+      <!-- this is search filed body -->
       <section>
         <div class="p-6 flex justify-center gap-1">
           <input id="search-area" type="text" placeholder="Search...." class="input input-bordered w-full max-w-xs " />
           <button onclick="searchhandler()" class=" btn btn-primary text-white mb-8 hover:bg-red-500 border-none">Search</button>
         </div>
       </section>
-        <section class="container mx-auto ">
-     <div id="phone-conatainer"  class="pt-24 grid grid-cols-3 gap-4">
+
+        <!-- loading add -->
+
+        <div id="loading-filed" class="text-center hidden">
+        <span class="loading loading-infinity text-primary p-7"></span>
+        </div>
+
+
+      <!-- phone container show result on loaddata js file -->
+        <section class="container mx-auto  ">
+     <div id="phone-conatainer"  class="pt-24 grid lg:grid-cols-3 grid-cols-1 gap-4 lg:ml-0 ml-4">
       
      </div>
      
         </section>
+       
+
+      
+
+        <!-- show all button add body -->
         <div class="text-center pt-5">
-          <button id="show-all-btn" class=" hidden btn btn-outline btn-primary text-white mb-8 hover:bg-red-500 border-none">Show All</button>
+          <button onclick="showall()" id="show-all-btn" class=" hidden btn btn-outline btn-primary text-white mb-8 hover:bg-red-500 border-none">Show All</button>
         </div>
+
     </main>
 
     <script src="javascript/api.js"></script>
