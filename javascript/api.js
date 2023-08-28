@@ -44,7 +44,7 @@ if (!isshowall){
     <h2 class="card-title">${phonedata.phone_name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions">
-    <button onclick="showdetails('${phonedata.slug}')" class="btn btn-primary">Show Details</button>
+    <button onclick="showdetails('${phonedata.slug}')" class="btn btn-primary hover:bg-red-500 border-none text-white">Show Details</button>
     </div>
     </div>
    `
@@ -93,7 +93,7 @@ const showoutput=(phone)=>{
 
     Radio:${phone.others.Radio}<br/>
 
-    USB:${phone.others.USB}<br/>
+    USB:${phone.others?.USB}<br/>
 
     WLAN:${phone.others.WLAN}<br/>
 
